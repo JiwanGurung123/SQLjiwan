@@ -1,0 +1,60 @@
+1. SELECT *
+   FROM
+    `bigquery-public-data.ncaa_basketball.mbb_pbp_sr`
+   WHERE
+   home_division_alias = "D1"
+  
+2. SELECT * 
+   FROM 
+	  `bigquery-public-data.ncaa_basketball.mbb_pbp_sr`
+   WHERE
+	 home_division_alias = "D1"
+    AND away_division_alias = "D1"
+   
+3. SELECT
+   COUNTIF(event_type = "threepointmade"
+    AND elapsed_time_sec < 2100)
+   FROM
+    `bigquery-public-data.ncaa_basketball.mbb_pbp_sr`
+   WHERE
+    home_division_alias = "D1"
+      AND away_division_alias = "D1" 
+    
+4. SELECT
+   COUNTIF((event_type = "threepointmade"
+      OR event_type = "threepointmiss"))
+   FROM
+    `bigquery-public-data.ncaa_basketball.mbb_pbp_sr`
+   WHERE
+   home_division_alias = "D1"
+    AND away_division_alias = "D1"
+    
+5. DELETE 
+   FROM `bigquery-public-data.ncaa_basketball.mbb_pbp_sr`
+   WHERE
+   home_division_alias = "D1"
+   
+6. DELETE 
+   FROM `bigquery-public-data.ncaa_basketball.mbb_pbp_sr`
+   WHERE
+   home_division_alias = "D1"
+    AND away_division_alias = "D1"
+    
+7. SELECT 
+   D1 AS 'DIVISION1'
+   FROM `bigquery-public-data.ncaa_basketball.mbb_pbp_sr` 
+   
+8. SELECT first_name, last_name, order_date, order_amount
+   FROM customers c
+   LEFT JOIN orders o
+   ON c.customer_id = o.customer_id
+   
+9. SELECT first_name, last_name, order_date, order_amount
+   FROM customers c
+   RIGHT JOIN orders o
+   ON c.customer_id = o.customer_id
+   
+10. SELECT first_name, last_name, order_date, order_amount
+    FROM customers c
+    FULL JOIN orders o
+    ON c.customer_id = o.customer_id
